@@ -1,0 +1,341 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400&display=swap');
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background: #fff;
+  font-family: 'Open Sans', sans-serif;
+  color: #333;
+  line-height: 1.6;
+  }
+
+/* page 1. Home */
+
+.inicial-header {
+  background: #333 url('https://source.unsplash.com/daily') no-repeat center center/cover;
+  color: #fff;
+  height: 100vh;
+  text-align: center;
+  padding:2rem;
+}
+
+.btn {
+  display: inline-block;
+  text-decoration: none;
+  background: #f4f4f4;
+  color: #333;
+  padding: 0.75rem 2rem;
+}
+
+.small-paragraph {
+  font-size: 20px;
+}
+
+/* Tercer BEM icons! */ 
+
+.about {
+  padding: 30px;
+
+  &__paragraph {
+    font-weight: bold;
+    margin-bottom: 15px;
+  }
+
+  &__icon {
+  background-color: #8c8167;
+  color: #fff;
+  padding: 1rem;
+  border-radius: 50%;
+  margin-bottom: 15px;
+  }
+}
+
+/*Flex!*/ 
+
+.flex-items {
+  display: flex;
+  text-align: center;
+  justify-content: center;
+  text-align: center;
+  height: 100%;
+}
+
+
+/* Page 2. About */
+
+#about-info .info-right {
+  float: right;
+  width: 50%;
+  min-height: 100%;
+  margin-top: 50px;
+
+  img {
+  display: block;
+  margin: auto;
+  width: 60%;
+  border-radius: 50%;
+  }
+}
+
+
+
+#about-info .info-left {
+  float: left;
+  width: 50%;
+  min-height: 100%;
+  margin-top: 50px;
+}
+
+/* Page 3. nada aun*/
+
+
+
+/* Page 4. Reviews / Testimonials */
+
+#testimonials {
+  height: 600px;
+  background: url('../img/test-bg.jpg') no-repeat center center/cover;
+  padding-top: 100px;
+
+  h2 {
+  color: #fff;
+  text-align: center;
+  padding-bottom: 40px;
+  }
+}
+
+#testimonials .testimonial {
+  padding: 20px;
+  margin-bottom: 40px;
+  border-radius: 5px;
+  opacity: 0.9;
+
+  img {
+    width: 100px;
+    float: left;
+    margin-right: 20px;
+    border-radius: 50%;
+
+  }
+
+  img:hover {
+    width: 110px;
+  }
+}
+
+.l-heading {
+  animation-name: l-heading;
+  animation-duration: 4s;
+  animation-iteration-count: infinite;
+}
+
+/* transitions */
+
+@keyframes l-heading {
+  0% {
+    color: #fff(16, 2, 31);
+    font-size: 60px;
+  }
+
+  25% {
+    color: rgb(152, 171, 214);
+    font-size: 80px;
+  }
+
+  50% {
+    color: rgb(107, 99, 112);
+    font-size: 100px;
+  }
+
+}
+
+/* mi intento de extend & mixin , quedo horrible pero funciona profe! llevo horas en esto y FUNCIONA que alegria
+ojo que se me rompió el footer no se por qué*/ 
+
+.gridColorContainers {
+width: 50%;
+height: 50%;
+
+}
+
+/* Mixin implementacion : funciona*/
+
+@mixin background(colorcito) {
+  background-color: $colorcito;
+}
+
+
+
+/* GRID*/ 
+
+.cards {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: auto;
+  grid-gap: 10px;
+  margin: 20px;
+  width: 80%;
+  overflow: hidden;
+  @extend .gridColorContainers;
+  @include background (colorcito);
+  grid-template-areas: 
+  "zamba          music"
+  "creativity     baby";
+}
+
+/* horrible este grid como siempre */
+.area-1 {
+  grid-area: zamba;
+}
+.area-2 {
+  grid-area: music;
+}
+.area-3 {
+  grid-area: creativity;
+}
+.area-4 {
+  grid-area: baby;
+}
+
+section .gallery {
+  display: flex;
+  justify-content: center;
+}
+
+.photo {
+  height: 300px;
+  width: 400px;
+}
+
+
+  /* Page 5. Contact*/
+.form-wrap {
+  background: #fff;
+  padding: 15px 25px;
+  color: #333;
+}
+
+.form-wrap h1,
+.form-wrap p {
+  text-align: center;
+}
+
+.form-wrap .form-group {
+ margin: 15px;
+}
+
+.form-wrap .form-group label {
+  display: block;
+  color: #666;
+}
+
+.form-wrap .form-group input {
+  width: 100%;
+  padding: 10px;
+  border: #ddd 1px solid;
+  border-radius: 5px;
+}
+
+.form-wrap button {
+  display: block;
+  width: 100%;
+  padding: 10px;
+  margin-top: 20px;
+  background: #49c1a2;
+  color: #fff;
+  cursor: pointer;
+  border-radius: 5%;
+}
+
+.form-wrap button:hover {
+  background-color: #37a08e;
+}
+
+.form-wrap .bottom-text {
+  font-size: 13px;
+  margin-top: 20px;
+}
+
+/* Footer 2*/
+.contact {
+    &__box{
+    float: left;
+    width: 33.3%;
+    padding: 40px;
+    text-align:center;
+    text-align: center;
+    background: #333;
+    color: #fff;
+
+      &--active{
+        background-color: rgb(79, 90, 100);
+      }
+  }
+
+  }
+
+
+
+
+/* Esto parece funcionar!!! aleluya! profe revise esto, anda bien? en mi compu, a veces anda
+y a veces no, es muy raro, en iphones y ipad el footer deberia estar uno debajo del otro */
+
+@media only screen and (max-width:320px){
+
+  .contact {
+    &__box{
+    float: none;
+    width: 33.3%;
+    padding: 40px;
+    text-align:center;
+    text-align: center;
+    background: #333;
+    color: #fff;
+
+      &--active{
+        background-color: rgb(79, 90, 100);
+      }
+  }
+
+  }
+/*no sirve esto 
+  .flex-items {
+    display: flex;
+    text-align: center;
+    align-items: center;
+    text-align: center;
+    height: 100%;
+
+    &__box{
+      flex-direction: row;
+    }
+  }*/
+
+}
+
+@media only screen and (min-width:321px) and (max-width:780px){
+
+  .contact {
+    &__box{
+    float: none;
+    width: 100%;
+    padding: 40px;
+    text-align:center;
+    text-align: center;
+    background: #333;
+    color: #fff;
+
+      &--active{
+        background-color: rgb(79, 90, 100);
+      }
+  }
+
+  }
+
+}
+
+
