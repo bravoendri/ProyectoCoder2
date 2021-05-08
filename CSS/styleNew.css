@@ -17,7 +17,9 @@ body {
   color: #fff;
   height: 100vh;
   text-align: center;
-  padding: 2rem; }
+  padding: 2rem; 
+  opacity: 0.8;
+  }
 
 .btn {
   display: inline-block;
@@ -68,7 +70,25 @@ body {
   min-height: 100%;
   margin-top: 50px; }
 
+
+
 /* Page 3. nada aun*/
+
+.item{
+  Position:relative;
+  }
+  .item:after {
+    content:"";
+    display:block;
+    position:absolute;
+    top:0;
+    bottom:0;
+    left:0;
+    right:0;
+    background:rgba(29, 11, 11, 0.6);
+  }
+
+  
 /* Page 4. Reviews / Testimonials */
 #testimonials {
   height: 600px;
@@ -92,25 +112,8 @@ body {
   #testimonials .testimonial img:hover {
     width: 110px; }
 
-.l-heading {
-  animation-name: l-heading;
-  animation-duration: 4s;
-  animation-iteration-count: infinite; }
 
-/* transitions */
-@keyframes l-heading {
-  0% {
-    color: #fff 16, 2, 31;
-    font-size: 60px; }
-  25% {
-    color: #98abd6;
-    font-size: 80px; }
-  50% {
-    color: #6b6370;
-    font-size: 100px; } }
-
-/* mi intento de extend & mixin , quedo horrible pero funciona profe! llevo horas en esto y FUNCIONA que alegria
-ojo que se me rompió el footer no se por qué*/
+/* extend & mixin */
 .gridColorContainers, .cards {
   width: 50%;
   height: 50%; }
@@ -126,7 +129,9 @@ ojo que se me rompió el footer no se por qué*/
   width: 80%;
   overflow: hidden;
   background-color: #8c8167;
-  grid-template-areas: "zamba          music" "creativity     baby"; }
+  grid-template-areas: "zamba          music"
+                       "creativity     baby"; 
+                      }
 
 /* horrible este grid como siempre */
 .area-1 {
@@ -141,6 +146,9 @@ ojo que se me rompió el footer no se por qué*/
 .area-4 {
   grid-area: baby; }
 
+.container {
+  width: 100%;
+}
 section .gallery {
   display: flex;
   justify-content: center; }
