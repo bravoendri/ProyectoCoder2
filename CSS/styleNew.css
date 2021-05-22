@@ -209,8 +209,7 @@ section .gallery {
   .contact__box--active {
     background-color: #4f5a64; }
 
-/* Esto parece funcionar!!! aleluya! profe revise esto, anda bien? en mi compu, a veces anda
-y a veces no, es muy raro, en iphones y ipad el footer deberia estar uno debajo del otro */
+
 @media only screen and (max-width: 320px) {
   .contact__box {
     float: none;
@@ -221,19 +220,8 @@ y a veces no, es muy raro, en iphones y ipad el footer deberia estar uno debajo 
     background: #333;
     color: #fff; }
     .contact__box--active {
-      background-color: #4f5a64; }
-  /*no sirve esto 
-  .flex-items {
-    display: flex;
-    text-align: center;
-    align-items: center;
-    text-align: center;
-    height: 100%;
-
-    &__box{
-      flex-direction: row;
+      background-color: #4f5a64; } 
     }
-  }*/ }
 
 @media only screen and (min-width: 321px) and (max-width: 780px) {
   .contact__box {
